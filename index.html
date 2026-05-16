@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fennec Booking - Download</title>
+
+  <script>
+    function redirectUser() {
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+      // iOS detection
+      if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+        window.location.href =
+          "https://apps.apple.com/dz/app/fennecbooking/id6736365390";
+        return;
+      }
+
+      // Android detection
+      if (/android/i.test(ua)) {
+        window.location.href =
+          "https://play.google.com/store/apps/details?id=dz.fennecbookingApp.android.app";
+        return;
+      }
+
+      // Desktop fallback
+      window.location.href = "https://fennecbooking.com";
+    }
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .box {
+      max-width: 400px;
+      padding: 20px;
+    }
+
+    .logo {
+      width: 80px;
+      margin-bottom: 20px;
+    }
+
+    .title {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      opacity: 0.7;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body onload="redirectUser()">
+
+  <div class="box">
+    <div class="title">Fennec Booking</div>
+    <div class="subtitle">Redirecting you to the best experience...</div>
+  </div>
+
+</body>
+</html>
